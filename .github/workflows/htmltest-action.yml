@@ -1,0 +1,20 @@
+name: htmltest-action
+
+on:
+  push:
+    branches: [ LSW, PYH, LKZ, TKM, LJE ]
+  pull_request:
+    branches: [ gh-pages ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: htmltest-action
+        uses: wjdp/htmltest-action@v0.13.0-rc1
+        with:
+          path: /
