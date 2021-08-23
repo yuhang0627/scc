@@ -1,0 +1,22 @@
+name: The Nu Html Checker
+
+on:
+  push:
+    branches: [ LSW, PYH, LKZ, TKM, LJE ]
+  pull_request:
+    branches: [ gh-pages ]
+
+  workflow_dispatch:
+
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: The Nu Html Checker
+      - uses: marcuslindblom/w3cvalidator@v1.0.1
+        with:
+          url: ${{ secrets.URL }}
+          level: error
