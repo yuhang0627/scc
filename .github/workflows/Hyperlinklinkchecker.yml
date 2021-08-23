@@ -1,0 +1,19 @@
+name: Hyperlink link checker
+on:
+  push:
+    branches: [ LSW, PYH, LKZ, TKM, LJE ]
+  pull_request:
+    branches: [ gh-pages ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Hyperlink link checker
+      - uses: untitaker/hyperlink@0.1.15
+        with:
+          args: public/ --sources src/
