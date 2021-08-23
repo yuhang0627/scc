@@ -30,26 +30,7 @@ jobs:
         with:
           url: 'https://...'  
 
-      - name: HTMLProofer
-        uses: chabad360/htmlproofer@v1.1
-        with:
-          directory: "./"
-
-      - name: Check HTML
-        uses: chabad360/htmlproofer@master
-        with:
-          directory: "./"
-      
-
-
-      - name: HTML5 Validator
-        uses: Cyb3r-Jak3/html5validator-action@v0.6.1
-        with:
-          root: "./"
-          css: true
-
-
-      
+     
       - name: Get the result
         run: echo "${{steps.link-report.outputs.result}}"
         
