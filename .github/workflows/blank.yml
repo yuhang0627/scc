@@ -24,13 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-                
-      - name: HTML5 Validator
-        uses: Cyb3r-Jak3/html5validator-action@v0.6.1
-        with:
-          root: ./
-          css: true
-
+        
       - name: Check HTML
         uses: chabad360/htmlproofer@master
         with:
@@ -40,6 +34,15 @@ jobs:
         uses: celinekurpershoek/link-checker@v1.0.0
         with:
           url: 'https://...'
+
+      - name: HTML5 Validator
+        uses: Cyb3r-Jak3/html5validator-action@v0.6.1
+        with:
+          root: ./
+          css: true
+
+
+      
       - name: Get the result
         run: echo "${{steps.link-report.outputs.result}}"
         
